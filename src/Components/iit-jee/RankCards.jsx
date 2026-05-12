@@ -1,35 +1,13 @@
-import { motion, useInView, animate } from 'framer-motion'
-import { useEffect, useState, useRef } from 'react'
+import { motion } from 'framer-motion'
 
 const rankData = [
-  { rank: 14, name: 'Aditya Sharma', exam: 'JEE Advanced 2026', num: '01', tag: 'JEE' },
-  { rank: 9, name: 'Priya Nair', exam: 'NEET UG 2026', num: '02', tag: 'NEET' },
-  { rank: 27, name: 'Ishani Gupta', exam: 'NEET UG 2026', num: '03', tag: 'NEET' },
-  { rank: 89, name: 'Rohan Mehta', exam: 'JEE Advanced 2026', num: '04', tag: 'JEE' },
-  { rank: 42, name: 'Sneha Patel', exam: 'NEET UG 2026', num: '05', tag: 'NEET' },
-  { rank: 112, name: 'Ananya Singh', exam: 'NEET UG 2026', num: '06', tag: 'NEET' },
+  { percentile: 99.973, name: 'Ojas Singhal', exam: 'JEE Main 2026', num: '01', tag: 'TOPPER', subtitle: 'Lucknow City Topper • 2 Year SIP' },
+  { percentile: 99.96, name: 'Ayan', exam: 'JEE Main 2026', num: '02', tag: 'RESIDENTIAL', subtitle: 'Residential Program' },
+  { percentile: 99.90, name: 'Vinod', exam: 'JEE Main 2026', num: '03', tag: 'RESIDENTIAL', subtitle: 'Residential Program' },
+  { percentile: 99.83, name: 'Saksham', exam: 'JEE Main 2026', num: '04', tag: 'JEE', subtitle: '' },
+  { percentile: 99.90, name: 'Janeshwar', exam: 'JEE Main 2026', num: '05', tag: 'RESIDENTIAL', subtitle: 'Residential Program' },
+  { percentile: 99.87, name: 'Shiva', exam: 'JEE Main 2026', num: '06', tag: 'RESIDENTIAL', subtitle: 'Residential Program' },
 ]
-
-function AnimatedNumber({ value }) {
-  const [display, setDisplay] = useState(0)
-  const ref = useRef(null)
-  const hasAnimated = useRef(false)
-  const isInView = useInView(ref, { once: true, amount: 0.3 })
-
-  useEffect(() => {
-    if (isInView && !hasAnimated.current) {
-      hasAnimated.current = true
-      const controls = animate(0, value, {
-        duration: 1.5,
-        ease: 'easeOut',
-        onUpdate: (v) => setDisplay(Math.round(v)),
-      })
-      return () => controls.stop()
-    }
-  }, [isInView, value])
-
-  return <span ref={ref}>{display}</span>
-}
 
 const cardVariants = {
   hidden: { opacity: 0, y: 50 },
@@ -47,7 +25,7 @@ export default function RankCards() {
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4 mb-10 md:mb-16">
           <div>
             <h2 className="text-[24px] sm:text-[28px] md:text-[32px] font-semibold text-white">The Results of Rigor</h2>
-            <p className="text-white/50 mt-2 text-[13px] sm:text-base">Elite JEE &amp; NEET rank holders from our 2026 session.</p>
+            <p className="text-white/50 mt-2 text-[13px] sm:text-base">771 out of 814 students cracked JEE Main 2026 — Best Result in the Country.</p>
           </div>
           <button className="text-[#AAC840] flex items-center gap-2 text-[13px] sm:text-[14px] font-medium shrink-0">
             View All Results
@@ -71,17 +49,20 @@ export default function RankCards() {
               </span>
               <div className="relative z-10">
                 <span className={`inline-block px-3 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider mb-3 ${
-                  card.tag === 'NEET' 
-                    ? 'bg-[#AAC840]/20 text-[#AAC840]' 
+                  card.tag === 'TOPPER'
+                    ? 'bg-[#AAC840]/20 text-[#AAC840]'
+                    : card.tag === 'RESIDENTIAL'
+                    ? 'bg-blue-500/20 text-blue-400'
                     : 'bg-white/10 text-white/70'
                 }`}>
-                  {card.tag}
+                  {card.tag === 'TOPPER' ? 'City Topper' : card.tag === 'RESIDENTIAL' ? 'Residential' : 'JEE Main'}
                 </span>
                 <span className="text-[#AAC840] font-bold text-[28px] sm:text-[32px] md:text-[40px] block mb-1 sm:mb-2">
-                  AIR <AnimatedNumber value={card.rank} />
+                  {card.percentile}<span className="text-[16px] sm:text-[18px] md:text-[22px]"> %ile</span>
                 </span>
                 <p className="text-[16px] sm:text-[18px] md:text-[20px] font-semibold mb-1">{card.name}</p>
                 <p className="text-white/50 text-[11px] sm:text-[12px] font-semibold">{card.exam}</p>
+                {card.subtitle && <p className="text-white/30 text-[10px] sm:text-[11px]">{card.subtitle}</p>}
               </div>
             </motion.div>
           ))}

@@ -1,44 +1,47 @@
-import { motion, useInView, animate } from "framer-motion";
-import { useEffect, useState, useRef } from "react";
+import { motion } from "framer-motion";
+import { useState } from "react";
 
 const filters = [
-  { id: "all", label: "All Results" },
-  { id: "jee", label: "IIT-JEE" },
-  { id: "neet", label: "NEET" },
+  { id: "all", label: "All Toppers" },
+  { id: "lucknow", label: "Lucknow Center" },
+  { id: "residential", label: "Residential Program" },
 ];
 
 const rankers = [
-  { rank: 14, name: "Aditya Sharma", exam: "JEE Advanced 2026", tag: "JEE", college: "IIT Bombay — Computer Science", image: "https://lh3.googleusercontent.com/aida-public/AB6AXuADO7o_wx7cbcK8TUli5xaqzHsP9H84C-JgZ4oUnYs-NW6FMYxU7Zy1ODCcw2cu3EXbm0eNqOAeQE3y4W8fsorv6ySIoyehlh2mJ0dt7P1feIRptV9lTHYdaPVtc8haKFkDpa6ItMfDAUL35lrddS_cXl0Pp_-jmJUXFTLwgtiD_vesM8jxZVtVK_e2tH00F2EUXpvjbEepDPcgI2L37SBPEez92wTm5B9iSCtABKXrdfB4f4bxqefnOLp9B2Nu31I2TXci1dxnR5W5" },
-  { rank: 9, name: "Priya Nair", exam: "NEET UG 2026", tag: "NEET", college: "AIIMS Delhi — MBBS", image: "https://lh3.googleusercontent.com/aida-public/AB6AXuByFrJwDSPQ7kxiOhfNWDiyymC0veXdvtP4UryEOZThxCIAf6ukMnpLs_Mn3kHSKkvxXlMQnhxHROqb7Y6N9jMzyb1ucvvF4Gh10kJS6hsUY0uXHQHB5VDtsE0kV_5SciAhoeo7XVY7VHr4H89R5hTXtdn4-vtZpXzyw2FsnIG1HkNR0C159R4d9gxjXX0ajZap02bwSxSkTXSs0U_XmXlKnpHKcV_ucJfRasvsb_OUzjq4MGPWaItg--TvjfcALIVc9gwbxmhIB_Oc" },
-  { rank: 27, name: "Ishani Gupta", exam: "NEET UG 2026", tag: "NEET", college: "AIIMS Jodhpur — MBBS", image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCosA0QkgjlUSZnjSpQ-ktVmF6ZXAXe5Xwlg028oXOAA5B7K5Utw9_URI_9g1emX-VAWxBfco0oynrTsSaEQnVS1u-QTBP106aFtN0iSY80t4bfFIgVQZUTm-A0YARW0FUMiTOZr3LnjP1wyYpBDVE7yR80lyF-3XyYjjOjK5wwbTr0OCJu6Q1MK-0jC1Ro2b2OmTRTBQmORxgXWRuwDFZRBEm7GGLXA6qhxdMAj0azvsAgJXXoibuH3prsUW1cBdOP9kXeg3qCfaK-" },
-  { rank: 42, name: "Vikram Malhotra", exam: "JEE Advanced 2026", tag: "JEE", college: "IIT Delhi — Electrical Engineering", image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCosA0QkgjlUSZnjSpQ-ktVmF6ZXAXe5Xwlg028oXOAA5B7K5Utw9_URI_9g1emX-VAWxBfco0oynrTsSaEQnVS1u-QTBP106aFtN0iSY80t4bfFIgVQZUTm-A0YARW0FUMiTOZr3LnjP1wyYpBDVE7yR80lyF-3XyYjjOjK5wwbTr0OCJu6Q1MK-0jC1Ro2b2OmTRTBQmORxgXWRuwDFZRBEm7GGLXA6qhxdMAj0azvsAgJXXoibuH3prsUW1cBdOP9kXeg3qCfaK-" },
-  { rank: 42, name: "Sneha Patel", exam: "NEET UG 2026", tag: "NEET", college: "Maulana Azad Medical College — MBBS", image: "https://lh3.googleusercontent.com/aida-public/AB6AXuByFrJwDSPQ7kxiOhfNWDiyymC0veXdvtP4UryEOZThxCIAf6ukMnpLs_Mn3kHSKkvxXlMQnhxHROqb7Y6N9jMzyb1ucvvF4Gh10kJS6hsUY0uXHQHB5VDtsE0kV_5SciAhoeo7XVY7VHr4H89R5hTXtdn4-vtZpXzyw2FsnIG1HkNR0C159R4d9gxjXX0ajZap02bwSxSkTXSs0U_XmXlKnpHKcV_ucJfRasvsb_OUzjq4MGPWaItg--TvjfcALIVc9gwbxmhIB_Oc" },
-  { rank: 89, name: "Rohan Mehta", exam: "JEE Advanced 2026", tag: "JEE", college: "IIT Kanpur — Mechanical Engineering", image: "https://lh3.googleusercontent.com/aida-public/AB6AXuADO7o_wx7cbcK8TUli5xaqzHsP9H84C-JgZ4oUnYs-NW6FMYxU7Zy1ODCcw2cu3EXbm0eNqOAeQE3y4W8fsorv6ySIoyehlh2mJ0dt7P1feIRptV9lTHYdaPVtc8haKFkDpa6ItMfDAUL35lrddS_cXl0Pp_-jmJUXFTLwgtiD_vesM8jxZVtVK_e2tH00F2EUXpvjbEepDPcgI2L37SBPEez92wTm5B9iSCtABKXrdfB4f4bxqefnOLp9B2Nu31I2TXci1dxnR5W5" },
-  { rank: 112, name: "Ananya Singh", exam: "NEET UG 2026", tag: "NEET", college: "KGMU Lucknow — MBBS", image: "https://lh3.googleusercontent.com/aida-public/AB6AXuByFrJwDSPQ7kxiOhfNWDiyymC0veXdvtP4UryEOZThxCIAf6ukMnpLs_Mn3kHSKkvxXlMQnhxHROqb7Y6N9jMzyb1ucvvF4Gh10kJS6hsUY0uXHQHB5VDtsE0kV_5SciAhoeo7XVY7VHr4H89R5hTXtdn4-vtZpXzyw2FsnIG1HkNR0C159R4d9gxjXX0ajZap02bwSxSkTXSs0U_XmXlKnpHKcV_ucJfRasvsb_OUzjq4MGPWaItg--TvjfcALIVc9gwbxmhIB_Oc" },
-  { rank: 156, name: "Kavya Reddy", exam: "JEE Advanced 2026", tag: "JEE", college: "IIT Madras — Chemical Engineering", image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCosA0QkgjlUSZnjSpQ-ktVmF6ZXAXe5Xwlg028oXOAA5B7K5Utw9_URI_9g1emX-VAWxBfco0oynrTsSaEQnVS1u-QTBP106aFtN0iSY80t4bfFIgVQZUTm-A0YARW0FUMiTOZr3LnjP1wyYpBDVE7yR80lyF-3XyYjjOjK5wwbTr0OCJu6Q1MK-0jC1Ro2b2OmTRTBQmORxgXWRuwDFZRBEm7GGLXA6qhxdMAj0azvsAgJXXoibuH3prsUW1cBdOP9kXeg3qCfaK-" },
-  { rank: 198, name: "Aarav Mishra", exam: "NEET UG 2026", tag: "NEET", college: "JIPMER Puducherry — MBBS", image: "https://lh3.googleusercontent.com/aida-public/AB6AXuADO7o_wx7cbcK8TUli5xaqzHsP9H84C-JgZ4oUnYs-NW6FMYxU7Zy1ODCcw2cu3EXbm0eNqOAeQE3y4W8fsorv6ySIoyehlh2mJ0dt7P1feIRptV9lTHYdaPVtc8haKFkDpa6ItMfDAUL35lrddS_cXl0Pp_-jmJUXFTLwgtiD_vesM8jxZVtVK_e2tH00F2EUXpvjbEepDPcgI2L37SBPEez92wTm5B9iSCtABKXrdfB4f4bxqefnOLp9B2Nu31I2TXci1dxnR5W5" },
+  { percentile: 99.973, name: "Ojas Singhal", exam: "JEE Main 2026", tag: "lucknow", badge: "Lucknow City Topper", subtitle: "2 Year SIP" },
+  { percentile: 99.96, name: "Ayan", exam: "JEE Main 2026", tag: "residential", badge: "Residential Program", subtitle: "" },
+  { percentile: 99.90, name: "Vinod", exam: "JEE Main 2026", tag: "residential", badge: "Residential Program", subtitle: "" },
+  { percentile: 99.90, name: "Janeshwar", exam: "JEE Main 2026", tag: "residential", badge: "Residential Program", subtitle: "" },
+  { percentile: 99.87, name: "Shiva", exam: "JEE Main 2026", tag: "residential", badge: "Residential Program", subtitle: "" },
+  { percentile: 99.86, name: "Neeraj", exam: "JEE Main 2026", tag: "residential", badge: "Residential Program", subtitle: "" },
+  { percentile: 99.86, name: "Krishna", exam: "JEE Main 2026", tag: "residential", badge: "Residential Program", subtitle: "" },
+  { percentile: 99.85, name: "Aayush", exam: "JEE Main 2026", tag: "residential", badge: "Residential Program", subtitle: "" },
+  { percentile: 99.83, name: "Saksham", exam: "JEE Main 2026", tag: "lucknow", badge: "", subtitle: "" },
+  { percentile: 99.78, name: "Ganesh", exam: "JEE Main 2026", tag: "residential", badge: "Residential Program", subtitle: "" },
+  { percentile: 99.71, name: "Amogh", exam: "JEE Main 2026", tag: "lucknow", badge: "", subtitle: "" },
+  { percentile: 99.70, name: "Nishant", exam: "JEE Main 2026", tag: "residential", badge: "Residential Program", subtitle: "" },
+  { percentile: 99.69, name: "Naman", exam: "JEE Main 2026", tag: "residential", badge: "Residential Program", subtitle: "" },
+  { percentile: 99.67, name: "Prashant", exam: "JEE Main 2026", tag: "residential", badge: "Residential Program", subtitle: "" },
+  { percentile: 99.67, name: "Abhishek", exam: "JEE Main 2026", tag: "residential", badge: "Residential Program", subtitle: "" },
+  { percentile: 99.66, name: "Adnan", exam: "JEE Main 2026", tag: "lucknow", badge: "", subtitle: "" },
+  { percentile: 99.65, name: "Atharva", exam: "JEE Main 2026", tag: "lucknow", badge: "", subtitle: "" },
+  { percentile: 99.63, name: "Ritika", exam: "JEE Main 2026", tag: "residential", badge: "Residential Program", subtitle: "" },
+  { percentile: 99.62, name: "Piyush", exam: "JEE Main 2026", tag: "residential", badge: "Residential Program", subtitle: "" },
+  { percentile: 99.61, name: "Biranchi", exam: "JEE Main 2026", tag: "residential", badge: "Residential Program", subtitle: "" },
+  { percentile: 99.60, name: "Vansh", exam: "JEE Main 2026", tag: "residential", badge: "Residential Program", subtitle: "" },
+  { percentile: 99.46, name: "Arjun", exam: "JEE Main 2026", tag: "lucknow", badge: "", subtitle: "" },
+  { percentile: 99.43, name: "Jasman", exam: "JEE Main 2026", tag: "lucknow", badge: "", subtitle: "" },
+  { percentile: 99.41, name: "Ravindra", exam: "JEE Main 2026", tag: "lucknow", badge: "", subtitle: "" },
+  { percentile: 99.29, name: "Wadud", exam: "JEE Main 2026", tag: "lucknow", badge: "", subtitle: "" },
+  { percentile: 99.27, name: "Aditya", exam: "JEE Main 2026", tag: "lucknow", badge: "", subtitle: "" },
+  { percentile: 99.25, name: "Kamalkant", exam: "JEE Main 2026", tag: "lucknow", badge: "", subtitle: "" },
+  { percentile: 99.24, name: "Raunak", exam: "JEE Main 2026", tag: "lucknow", badge: "", subtitle: "" },
+  { percentile: 99.15, name: "Arifuddin", exam: "JEE Main 2026", tag: "lucknow", badge: "", subtitle: "" },
+  { percentile: 99.13, name: "Atulya", exam: "JEE Main 2026", tag: "lucknow", badge: "", subtitle: "" },
+  { percentile: 99.12, name: "Divyansh", exam: "JEE Main 2026", tag: "lucknow", badge: "", subtitle: "" },
+  { percentile: 99.11, name: "Ali", exam: "JEE Main 2026", tag: "lucknow", badge: "", subtitle: "" },
+  { percentile: 99.08, name: "Jumid", exam: "JEE Main 2026", tag: "lucknow", badge: "", subtitle: "" },
 ];
-
-function AnimatedNumber({ value }) {
-  const [display, setDisplay] = useState(0);
-  const ref = useRef(null);
-  const hasAnimated = useRef(false);
-  const isInView = useInView(ref, { once: true, amount: 0.3 });
-
-  useEffect(() => {
-    if (isInView && !hasAnimated.current) {
-      hasAnimated.current = true;
-      const controls = animate(0, value, {
-        duration: 1.5,
-        ease: "easeOut",
-        onUpdate: (v) => setDisplay(Math.round(v)),
-      });
-      return () => controls.stop();
-    }
-  }, [isInView, value]);
-
-  return <span ref={ref}>{display}</span>;
-}
 
 const cardVariants = {
   hidden: { opacity: 0, y: 50 },
@@ -51,7 +54,7 @@ const cardVariants = {
 
 export default function TopRankers() {
   const [active, setActive] = useState("all");
-  const filtered = active === "all" ? rankers : rankers.filter((r) => r.tag.toLowerCase() === active);
+  const filtered = active === "all" ? rankers : rankers.filter((r) => r.tag === active);
 
   return (
     <section className="bg-[#111111] py-[60px] overflow-hidden">
@@ -64,8 +67,8 @@ export default function TopRankers() {
           className="flex flex-col md:flex-row justify-between items-start md:items-end mb-8 sm:mb-12 gap-4 sm:gap-6"
         >
           <div>
-            <h2 className="text-[28px] sm:text-[32px] md:text-[40px] font-bold text-white mb-2 sm:mb-3">Our Top Rankers</h2>
-            <p className="text-white/50 text-[14px] sm:text-[16px] md:text-[18px]">Elite JEE &amp; NEET rank holders who trusted Gravity for their preparation.</p>
+            <h2 className="text-[28px] sm:text-[32px] md:text-[40px] font-bold text-white mb-2 sm:mb-3">JEE Main 2026 Toppers</h2>
+            <p className="text-white/50 text-[14px] sm:text-[16px] md:text-[18px]">771 out of 814 students cracked JEE Main — Best Result in the Country.</p>
           </div>
         </motion.div>
 
@@ -94,7 +97,7 @@ export default function TopRankers() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-[24px]">
           {filtered.map((card, i) => (
             <motion.div
-              key={card.name + card.exam}
+              key={card.name + card.percentile}
               className="bg-white/5 border border-white/10 rounded-[18px] sm:rounded-[24px] text-white overflow-hidden group hover:border-[#AAC840]/30 transition-colors"
               custom={i}
               variants={cardVariants}
@@ -102,24 +105,20 @@ export default function TopRankers() {
               whileInView="visible"
               viewport={{ once: true }}
             >
-              <div className="flex items-center gap-3 sm:gap-4 p-4 sm:p-6 pb-0">
-                <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-full overflow-hidden ring-2 ring-[#AAC840]/40 shrink-0">
-                  <img src={card.image} alt={card.name} className="w-full h-full object-cover" />
-                </div>
-                <div className="min-w-0">
-                  <p className="text-[15px] sm:text-[18px] font-semibold truncate">{card.name}</p>
-                  <p className="text-white/40 text-[11px] sm:text-[12px] font-semibold">{card.exam}</p>
-                </div>
-              </div>
-
               <div className="p-4 sm:p-6">
                 <div className="flex items-end justify-between mb-3 sm:mb-4">
                   <div>
-                    <span className={`inline-block px-3 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider mb-2 sm:mb-3 ${card.tag === "NEET" ? "bg-[#AAC840]/20 text-[#AAC840]" : "bg-white/10 text-white/70"}`}>
-                      {card.tag}
+                    <span className={`inline-block px-3 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider mb-2 sm:mb-3 ${
+                      card.badge === "Lucknow City Topper"
+                        ? "bg-[#AAC840]/20 text-[#AAC840]"
+                        : card.tag === "residential"
+                        ? "bg-blue-500/20 text-blue-400"
+                        : "bg-white/10 text-white/70"
+                    }`}>
+                      {card.badge || "Lucknow Center"}
                     </span>
                     <span className="text-[#AAC840] font-bold text-[28px] sm:text-[36px] md:text-[40px] block leading-none">
-                      AIR <AnimatedNumber value={card.rank} />
+                      {card.percentile}<span className="text-[14px] sm:text-[18px]"> %ile</span>
                     </span>
                   </div>
                   <span className="material-symbols-outlined text-[#AAC840]/30 text-[48px] sm:text-[64px] group-hover:text-[#AAC840]/50 transition-colors">
@@ -128,10 +127,9 @@ export default function TopRankers() {
                 </div>
 
                 <div className="pt-3 sm:pt-4 border-t border-white/10">
-                  <div className="flex items-center gap-2">
-                    <span className="material-symbols-outlined text-[#AAC840] text-[14px] sm:text-[16px]">school</span>
-                    <p className="text-white/60 text-[12px] sm:text-[13px]">{card.college}</p>
-                  </div>
+                  <p className="text-[15px] sm:text-[18px] font-semibold">{card.name}</p>
+                  <p className="text-white/40 text-[11px] sm:text-[12px] font-semibold">{card.exam}</p>
+                  {card.subtitle && <p className="text-white/30 text-[10px] sm:text-[11px] mt-1">{card.subtitle}</p>}
                 </div>
               </div>
             </motion.div>

@@ -70,8 +70,8 @@ export default function ResultsShowcase() {
                   </span>
                 </div>
                 <div>
-                  <h4 className="text-[18px] sm:text-[24px] font-semibold">IIT JEE Advanced 2026</h4>
-                  <p className="text-white/70 text-[13px] sm:text-base">12 Students in Top 500 AIR</p>
+                  <h4 className="text-[18px] sm:text-[24px] font-semibold">JEE Main 2026</h4>
+                  <p className="text-white/70 text-[13px] sm:text-base">771 out of 814 Cracked JEE Main</p>
                 </div>
               </div>
 
@@ -101,7 +101,7 @@ export default function ResultsShowcase() {
                 viewport={{ once: true }}
               >
                 <span className="text-4xl sm:text-6xl font-bold text-[#AAC840]">
-                  <CountUp target="99.9" />
+                  99.973
                 </span>
                 <span className="uppercase tracking-widest text-[11px] sm:text-[14px] text-[#444748]">Percentile</span>
                 <span className="text-[16px] sm:text-[24px]">JEE Main 2026</span>
@@ -115,8 +115,8 @@ export default function ResultsShowcase() {
                 whileInView="visible"
                 viewport={{ once: true }}
               >
-                <span className="text-2xl sm:text-4xl font-bold">Rank 01</span>
-                <span className="text-[12px] sm:text-[14px]">UP State Entrance</span>
+                <span className="text-2xl sm:text-4xl font-bold">771/814</span>
+                <span className="text-[12px] sm:text-[14px]">Cracked JEE Main</span>
               </motion.div>
             </div>
 
@@ -129,8 +129,8 @@ export default function ResultsShowcase() {
                 whileInView="visible"
                 viewport={{ once: true }}
               >
-                <span className="text-2xl sm:text-4xl font-bold">Rank 09</span>
-                <span className="text-[12px] sm:text-[14px]">NEET All India</span>
+                <span className="text-2xl sm:text-4xl font-bold">City #1</span>
+                <span className="text-[12px] sm:text-[14px]">Lucknow Topper</span>
               </motion.div>
 
               <motion.div
@@ -142,10 +142,10 @@ export default function ResultsShowcase() {
                 viewport={{ once: true }}
               >
                 <span className="text-4xl sm:text-6xl font-bold text-[#AAC840]">
-                  <CountUp target="50" />+
+                  <CountUp target="33" />+
                 </span>
-                <span className="uppercase tracking-widest text-[11px] sm:text-[14px] text-[#444748]">Admissions</span>
-                <span className="text-[16px] sm:text-[24px]">KVPY Scholars</span>
+                <span className="uppercase tracking-widest text-[11px] sm:text-[14px] text-[#444748]">Students</span>
+                <span className="text-[16px] sm:text-[24px]">Above 99 Percentile</span>
               </motion.div>
             </div>
           </div>

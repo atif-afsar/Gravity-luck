@@ -8,7 +8,7 @@ const milestones = [
   { year: "2020", title: "Digital Transformation", description: "Seamless transition to hybrid learning during the pandemic with zero compromise on quality. Online test platform launched with 200+ mock tests.", icon: "devices" },
   { year: "2023", title: "Expansion Era", description: "Third center opened in Aliganj. Crossed 400+ IIT and 900+ NEET total selections. AI-powered adaptive testing introduced.", icon: "rocket_launch" },
   { year: "2025", title: "Record-Breaking Year", description: "AIR 5 in JEE Advanced, AIR 7 in NEET. 500+ IIT and 1200+ NEET total selections. New state-of-the-art Hazratganj campus inaugurated.", icon: "emoji_events" },
-  { year: "2026", title: "Peak Performance", description: "AIR 3 in NEET, AIR 9 in JEE Advanced. 550+ IIT and 1400+ NEET total selections. Recognized as Lucknow's #1 coaching institute.", icon: "workspace_premium" },
+  { year: "2026", title: "Best Result in the Country", description: "771 out of 814 students cracked JEE Main — the best result in the country. Lucknow City Topper Ojas Singhal scored 99.973 percentile. 33+ students scored above 99 percentile. Recognized as India's top coaching institute.", icon: "workspace_premium" },
 ];
 
 const itemVariants = {

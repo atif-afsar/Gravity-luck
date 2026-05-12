@@ -35,9 +35,9 @@ function AnimatedCounter({ target, suffix = "", duration = 2 }) {
 const headingWords = "A Legacy Built on Rank-Level Performance.".split(" ");
 
 const heroStats = [
-  { value: 550, suffix: "+", label: "IIT Selections", icon: "engineering" },
-  { value: 1400, suffix: "+", label: "NEET Selections", icon: "medication" },
-  { value: 99, suffix: ".9%", label: "Top Percentile", icon: "trending_up" },
+  { value: 771, suffix: "/814", label: "Cracked JEE Main", icon: "engineering" },
+  { value: 99, suffix: ".973%", label: "Top Percentile", icon: "trending_up" },
+  { value: 33, suffix: "+", label: "Above 99 %ile", icon: "workspace_premium" },
   { value: 20, suffix: "K+", label: "Students Mentored", icon: "school" },
 ];
 
@@ -90,10 +90,9 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
               className="text-[14px] sm:text-[16px] md:text-[18px] text-[#444748] leading-[1.6] max-w-2xl"
             >
-              Year after year, Gravity students dominate the merit lists of
-              India&apos;s toughest competitive exams. From single-digit AIRs in
-              NEET to Top 100 in JEE Advanced — our results are the proof of our
-              methodology.
+              In JEE Main 2026, 771 out of 814 Gravity students cracked the exam — the best
+              result in the country. Our Lucknow City Topper Ojas Singhal scored
+              99.973 percentile, with 33+ students scoring above 99 percentile.
             </motion.p>
           </div>
 

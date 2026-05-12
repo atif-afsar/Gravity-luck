@@ -49,9 +49,9 @@ function AnimatedCounter({ target, suffix, duration = 2 }) {
 }
 
 const STATS = [
+  { value: 771, suffix: "/814", label: "Cracked JEE Main" },
+  { value: 33, suffix: "+", label: "Above 99 %ile" },
   { value: 20, suffix: "K+", label: "Students Mentored" },
-  { value: 550, suffix: "+", label: "IIT Selections" },
-  { value: 1400, suffix: "+", label: "NEET Selections" },
 ];
 
 export default function Hero() {

@@ -24,7 +24,7 @@ function CountUp({ target, duration = 2 }) {
 }
 
 const yearData = [
-  { year: "2026", highlight: true, jee: { top100: 6, top500: 18, top1000: 42, total: 185 }, neet: { top100: 5, top500: 24, top1000: 58, total: 420 } },
+  { year: "2026", highlight: true, jee: { top100: 6, top500: 18, top1000: 42, total: 771 }, neet: { top100: 5, top500: 24, top1000: 58, total: 420 } },
   { year: "2025", highlight: false, jee: { top100: 5, top500: 15, top1000: 35, total: 168 }, neet: { top100: 4, top500: 21, top1000: 52, total: 380 } },
   { year: "2024", highlight: false, jee: { top100: 4, top500: 13, top1000: 30, total: 155 }, neet: { top100: 3, top500: 19, top1000: 48, total: 345 } },
   { year: "2023", highlight: false, jee: { top100: 4, top500: 12, top1000: 28, total: 145 }, neet: { top100: 3, top500: 18, top1000: 45, total: 320 } },
@@ -63,16 +63,16 @@ export default function YearWiseResults() {
               </div>
               <div className="space-y-2.5 sm:space-y-3">
                 <div className="flex justify-between text-[13px] sm:text-[14px]">
-                  <span className="text-white/50">Total JEE Selections</span>
-                  <span className="text-[#AAC840] font-bold"><CountUp target="185" /></span>
+                  <span className="text-white/50">JEE Main Qualified</span>
+                  <span className="text-[#AAC840] font-bold"><CountUp target="771" /></span>
                 </div>
                 <div className="flex justify-between text-[13px] sm:text-[14px]">
                   <span className="text-white/50">Total NEET Selections</span>
                   <span className="text-[#AAC840] font-bold"><CountUp target="420" /></span>
                 </div>
                 <div className="flex justify-between text-[13px] sm:text-[14px]">
-                  <span className="text-white/50">Top 100 AIR Combined</span>
-                  <span className="text-white font-bold">11</span>
+                  <span className="text-white/50">Above 99 Percentile</span>
+                  <span className="text-white font-bold">33+</span>
                 </div>
               </div>
             </div>
