@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Gravity Classes | IIT-JEE &amp; NEET Coaching Excellence</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-fixed-variant": "#454747",
+                    "on-tertiary": "#ffffff",
+                    "error": "#ba1a1a",
+                    "on-secondary-fixed": "#1c1b1b",
+                    "on-primary-fixed-variant": "#454747",
+                    "on-background": "#1c1b1b",
+                    "surface-container-lowest": "#ffffff",
+                    "primary": "#5d5f5f",
+                    "outline-variant": "#c4c7c8",
+                    "surface-variant": "#e5e2e1",
+                    "error-container": "#ffdad6",
+                    "primary-container": "#ffffff",
+                    "tertiary-fixed": "#e2e2e2",
+                    "surface-bright": "#fcf8f8",
+                    "on-tertiary-container": "#747676",
+                    "on-secondary-fixed-variant": "#474646",
+                    "background": "#fcf8f8",
+                    "secondary-fixed-dim": "#c8c6c5",
+                    "surface-container-high": "#ebe7e7",
+                    "on-error-container": "#93000a",
+                    "inverse-on-surface": "#f4f0ef",
+                    "surface-container-low": "#f6f3f2",
+                    "primary-fixed": "#e2e2e2",
+                    "secondary-container": "#e5e2e1",
+                    "primary-fixed-dim": "#c6c6c7",
+                    "secondary-fixed": "#e5e2e1",
+                    "inverse-primary": "#c6c6c7",
+                    "on-primary-fixed": "#1a1c1c",
+                    "secondary": "#5f5e5e",
+                    "surface-dim": "#ddd9d9",
+                    "on-surface-variant": "#444748",
+                    "outline": "#747878",
+                    "tertiary-container": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "on-primary-container": "#747676",
+                    "on-error": "#ffffff",
+                    "surface-tint": "#5d5f5f",
+                    "tertiary": "#5d5f5f",
+                    "on-tertiary-fixed": "#1a1c1c",
+                    "on-secondary-container": "#656464",
+                    "inverse-surface": "#313030",
+                    "on-surface": "#1c1b1b",
+                    "surface-container-highest": "#e5e2e1",
+                    "surface-container": "#f1edec",
+                    "surface": "#fcf8f8",
+                    "tertiary-fixed-dim": "#c6c6c7",
+                    "on-secondary": "#ffffff",
+                    "brand-lime": "#AAC840",
+                    "brand-black": "#111111"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-mobile": "20px",
+                    "container-max": "1280px",
+                    "section-gap": "80px",
+                    "gutter": "24px",
+                    "margin-desktop": "40px",
+                    "unit": "8px"
+            },
+            "fontFamily": {
+                    "body-md": ["Hanken Grotesk"],
+                    "label-sm": ["Hanken Grotesk"],
+                    "label-md": ["Hanken Grotesk"],
+                    "display-lg-mobile": ["Hanken Grotesk"],
+                    "headline-lg": ["Hanken Grotesk"],
+                    "headline-xl": ["Hanken Grotesk"],
+                    "display-lg": ["Hanken Grotesk"],
+                    "body-lg": ["Hanken Grotesk"]
+            },
+            "fontSize": {
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "label-md": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                    "display-lg-mobile": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "headline-lg": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "headline-xl": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .card-shadow {
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.04);
+        }
+        .glass-nav {
+            backdrop-filter: blur(10px);
+        }
+        body {
+            background-color: #fcf8f8;
+            color: #1c1b1b;
+        }
+    </style>
+</head>
+<body class="font-body-md">
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 glass-nav shadow-sm h-20">
+<div class="flex justify-between items-center px-margin-desktop h-full max-w-container-max mx-auto">
+<div class="font-headline-xl text-headline-xl font-bold text-on-surface tracking-tight">Gravity Classes</div>
+<div class="hidden md:flex items-center gap-8 font-body-md text-label-md">
+<a class="text-on-surface border-b-2 border-brand-lime pb-1" href="#">Home</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-all duration-300" href="#">IIT-JEE &amp; NEET</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-all duration-300" href="#">Courses</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-all duration-300" href="#">Results</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-all duration-300" href="#">Contact</a>
+</div>
+<button class="bg-brand-black text-white px-8 py-3 rounded-[12px] font-label-md hover:opacity-80 transition-all scale-95 active:scale-100">
+                Admission
+            </button>
+</div>
+</nav>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="max-w-container-max mx-auto px-margin-desktop py-section-gap grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
+<div class="lg:col-span-7">
+<span class="inline-block bg-surface-container text-on-surface px-4 py-1 rounded-full text-label-sm mb-6 uppercase tracking-widest">Premium Coaching Excellence</span>
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg mb-8 text-brand-black">Mastering the Science of Success.</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-2xl">
+                    Gravity Classes offers an elite academic environment designed specifically for the rigorous demands of IIT-JEE and NEET. Our methodology combines analytical precision with psychological momentum.
+                </p>
+<div class="flex flex-wrap gap-4">
+<button class="bg-brand-lime text-brand-black px-10 py-4 rounded-[12px] font-bold text-label-md hover:shadow-lg transition-all">Enroll for 2024-25</button>
+<button class="border border-outline-variant text-brand-black px-10 py-4 rounded-[12px] font-bold text-label-md hover:bg-surface-container transition-all">Download Prospectus</button>
+</div>
+</div>
+<div class="lg:col-span-5 relative h-[500px] rounded-[24px] overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A bright and airy modern study space with clean white surfaces and high-end wooden furniture. The atmosphere is quiet and professional, featuring soft sunlight streaming through large windows. A high-resolution photo capturing the intellectual rigor and premium aesthetic of an elite coaching center with minimalist design cues." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAy5wnqjEYeEXHUIDUhZ1hQsHAzrW088EyCL5mXYsufzNBKk_CqwlRM_kTQeyguEGuMg2GH23xmugUJoo1ClgzbSeGWj5usdOCJ0uvryHFimJsIbEYuRLySqnUBxv_kqIayP2J64dsdI5KdduTIU9X7CujW1oewZIfJDl1WRgkK1JhAJUwTLlwwC8v2NfP66M1T95L3tFtQ11LRm0cvMxZuLMSb40K28xn1qG_9RNb6pY__i84xaq6y0xFbWKZ6Kw151kPhnK7QmNXl"/>
+</div>
+</section>
+<!-- Why Gravity: Editorial Content -->
+<section class="bg-surface-container-low py-section-gap">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<div class="md:col-span-4">
+<h2 class="font-headline-xl text-headline-xl text-brand-black sticky top-24">Why Gravity for Competitive Exams?</h2>
+</div>
+<div class="md:col-span-8 space-y-12">
+<div class="border-l-2 border-brand-lime pl-8">
+<h3 class="font-headline-lg text-headline-lg text-brand-black mb-4">Precision Engineering of Potential</h3>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+                                We believe that competitive exams are not just a test of intelligence, but of strategy and mental fortitude. Our curriculum is mapped to the latest NTA patterns, ensuring every hour spent studying is an hour spent moving toward your goal. At Gravity, we don't just teach subjects; we engineer success through meticulous planning and expert execution.
+                            </p>
+</div>
+<div class="border-l-2 border-brand-lime pl-8">
+<h3 class="font-headline-lg text-headline-lg text-brand-black mb-4">The Cognitive Edge</h3>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+                                Beyond the textbooks, we integrate cognitive science into our learning process. Spaced repetition, active recall, and rigorous simulation testing form the backbone of our pedagogy. This approach ensures that information is not just memorized, but deeply understood and readily accessible under exam pressure.
+                            </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Teaching Methodology: Bento Grid -->
+<section class="py-section-gap">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="text-center mb-16">
+<h2 class="font-headline-xl text-headline-xl text-brand-black">Our Methodology</h2>
+<p class="text-on-surface-variant mt-4">A four-pillar framework designed for peak academic performance.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-gutter h-auto md:h-[600px]">
+<div class="md:col-span-2 md:row-span-2 bg-white p-10 rounded-[24px] card-shadow flex flex-col justify-end group transition-transform hover:-translate-y-1">
+<div class="mb-auto text-brand-lime">
+<span class="material-symbols-outlined text-[48px]">analytics</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg text-brand-black mb-4">Adaptive Analytics</h3>
+<p class="text-on-surface-variant">Personalized performance tracking that identifies granular weaknesses in Physics, Chemistry, and Mathematics, providing real-time course correction.</p>
+</div>
+<div class="md:col-span-2 bg-brand-black p-10 rounded-[24px] text-white flex items-center justify-between group transition-transform hover:-translate-y-1">
+<div>
+<h3 class="font-headline-lg text-headline-lg mb-2">Simulated Testing</h3>
+<p class="text-surface-variant/70">Mirroring the JEE/NEET environment to build muscle memory and focus.</p>
+</div>
+<span class="material-symbols-outlined text-[40px] text-brand-lime">timer</span>
+</div>
+<div class="bg-surface-container p-8 rounded-[24px] flex flex-col justify-center items-center text-center transition-transform hover:-translate-y-1">
+<span class="material-symbols-outlined text-[32px] mb-4">menu_book</span>
+<h4 class="font-label-md">Curated Study Material</h4>
+</div>
+<div class="bg-brand-lime p-8 rounded-[24px] flex flex-col justify-center items-center text-center text-brand-black transition-transform hover:-translate-y-1">
+<span class="material-symbols-outlined text-[32px] mb-4">psychology</span>
+<h4 class="font-label-md">Mentorship Programs</h4>
+</div>
+</div>
+</div>
+</section>
+<!-- AIR Rank Cards -->
+<section class="bg-brand-black py-section-gap overflow-hidden">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="flex justify-between items-end mb-16">
+<div>
+<h2 class="font-headline-xl text-headline-xl text-white">The Results of Rigor</h2>
+<p class="text-surface-variant/60 mt-2">Elite rank holders from our 2023 session.</p>
+</div>
+<button class="text-brand-lime flex items-center gap-2 font-label-md">
+                        View All Results <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Rank Card 1 -->
+<div class="bg-white/5 border border-white/10 p-8 rounded-[20px] text-white relative overflow-hidden group">
+<div class="absolute -right-4 -top-4 font-bold text-[80px] text-white/5 group-hover:text-brand-lime/10 transition-colors">01</div>
+<div class="relative z-10">
+<span class="text-brand-lime font-bold text-[40px] block mb-2">AIR 14</span>
+<h4 class="font-headline-lg text-[20px] mb-1">Aditya Sharma</h4>
+<p class="text-surface-variant/50 text-label-sm">JEE Advanced 2023</p>
+</div>
+</div>
+<!-- Rank Card 2 -->
+<div class="bg-white/5 border border-white/10 p-8 rounded-[20px] text-white relative overflow-hidden group">
+<div class="absolute -right-4 -top-4 font-bold text-[80px] text-white/5 group-hover:text-brand-lime/10 transition-colors">02</div>
+<div class="relative z-10">
+<span class="text-brand-lime font-bold text-[40px] block mb-2">AIR 27</span>
+<h4 class="font-headline-lg text-[20px] mb-1">Ishani Gupta</h4>
+<p class="text-surface-variant/50 text-label-sm">NEET 2023</p>
+</div>
+</div>
+<!-- Rank Card 3 -->
+<div class="bg-white/5 border border-white/10 p-8 rounded-[20px] text-white relative overflow-hidden group">
+<div class="absolute -right-4 -top-4 font-bold text-[80px] text-white/5 group-hover:text-brand-lime/10 transition-colors">03</div>
+<div class="relative z-10">
+<span class="text-brand-lime font-bold text-[40px] block mb-2">AIR 89</span>
+<h4 class="font-headline-lg text-[20px] mb-1">Rohan Mehta</h4>
+<p class="text-surface-variant/50 text-label-sm">JEE Advanced 2023</p>
+</div>
+</div>
+<!-- Rank Card 4 -->
+<div class="bg-white/5 border border-white/10 p-8 rounded-[20px] text-white relative overflow-hidden group">
+<div class="absolute -right-4 -top-4 font-bold text-[80px] text-white/5 group-hover:text-brand-lime/10 transition-colors">04</div>
+<div class="relative z-10">
+<span class="text-brand-lime font-bold text-[40px] block mb-2">AIR 112</span>
+<h4 class="font-headline-lg text-[20px] mb-1">Ananya Singh</h4>
+<p class="text-surface-variant/50 text-label-sm">NEET 2023</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Faculty Profiles -->
+<section class="py-section-gap">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<h2 class="font-headline-xl text-headline-xl text-brand-black mb-16">Mentors in Physics &amp; Biology</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Faculty 1 -->
+<div class="group">
+<div class="aspect-[3/4] rounded-[24px] overflow-hidden mb-6 card-shadow">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A professional portrait of a senior academic male with gray hair, wearing a clean charcoal suit and glasses. He stands in front of a blurred bookshelf background in a well-lit modern office. The lighting is soft and flattering, emphasizing authority and wisdom with a warm, professional photographic style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAek4ju5lp_VDDhciFC9L7eKtxKAeuITIaIAQnD9EOHlAv0fNyUrHJDCxdlRNGJfEy9VsnDmJNbIVZqyfhZvjMCS_R3eRKqcxPkcGkugj3Zj0A1GwCrkmojfchz2z8O2qGSBMgQN0XcajrRvFXyVN-z6b777LjvZnzMAjcewfGZ3i9FnPBhvs3oFXZvmHR3tufYpa3F16LFEpvueKGCLgcIYok1AqtJElamcYpWF8lDltj_eM35p4Xe8Hy2F6Kj0dGH6tXSI3dzlK-t"/>
+</div>
+<h4 class="font-headline-lg text-headline-lg text-brand-black">Dr. Sameer Verma</h4>
+<p class="text-brand-lime font-label-md mb-2">HOD Physics | IIT Kanpur Alum</p>
+<p class="text-on-surface-variant text-body-md">20+ years of expertise in Classical and Quantum Mechanics.</p>
+</div>
+<!-- Faculty 2 -->
+<div class="group">
+<div class="aspect-[3/4] rounded-[24px] overflow-hidden mb-6 card-shadow">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A professional portrait of a female biology professor with a confident smile, wearing an ivory blazer. She is in a high-tech laboratory setting with soft focus scientific equipment in the background. High-key studio lighting with a clean, contemporary aesthetic that reflects scientific expertise and professional excellence." src="https://lh3.googleusercontent.com/aida-public/AB6AXuByFrJwDSPQ7kxiOhfNWDiyymC0veXdvtP4UryEOZThxCIAf6ukMnpLs_Mn3kHSKkvxXlMQnhxHROqb7Y6N9jMzyb1ucvvF4Gh10kJS6hsUY0uXHQHB5VDtsE0kV_5SciAhoeo7XVY7VHr4H89R5hTXtdn4-vtZpXzyw2FsnIG1HkNR0C159R4d9gxjXX0ajZap02bwSxSkTXSs0U_XmXlKnpHKcV_ucJfRasvsb_OUzjq4MGPWaItg--TvjfcALIVc9gwbxmhIB_Oc"/>
+</div>
+<h4 class="font-headline-lg text-headline-lg text-brand-black">Dr. Elena Rodriguez</h4>
+<p class="text-brand-lime font-label-md mb-2">Senior Faculty Biology | PhD AIIMS</p>
+<p class="text-on-surface-variant text-body-md">Specialist in Genetic Engineering and Molecular Biology.</p>
+</div>
+<!-- Faculty 3 -->
+<div class="group">
+<div class="aspect-[3/4] rounded-[24px] overflow-hidden mb-6 card-shadow">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A professional male teacher in his 40s, wearing a crisp white shirt and a modern black tie. He has a friendly but focused expression, standing in front of a clean minimalist gray wall. Professional corporate photography style with balanced lighting and shallow depth of field, emphasizing reliability and academic focus." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDDqjTBF1ckj1a95-7SX6Ck44S_h41XYWR9jzOs608YwM0lFnkMSc5VJdh5yzfL1qn36tuLShIsJF_Sy0J45EZACigDihUM9rf9BJzIaMUYcMC1LZVO-BTjIMzladNNQBIHVrS5Fm5ZpPNseXwuQR7U0YVsJ4o8LhKL1OXZLXraSqs6JhT6U2ua-QIIqpyAeSOIutosLwaqgRsNKPPY90DpP1GOagmR0-NIL7w1ytpdh6AzoTa48AxaKFcrn46yl2W687h1ppZ1Wig"/>
+</div>
+<h4 class="font-headline-lg text-headline-lg text-brand-black">Prof. Rajesh Khanna</h4>
+<p class="text-brand-lime font-label-md mb-2">HOD Mathematics | IIT Delhi Alum</p>
+<p class="text-on-surface-variant text-body-md">Renowned for simplifying complex Calculus and Trigonometry.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Success Stories: Editorial Quote -->
+<section class="py-section-gap bg-surface-container">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="max-w-4xl mx-auto text-center">
+<span class="material-symbols-outlined text-brand-lime text-[64px] mb-8" style="font-variation-settings: 'FILL' 1;">format_quote</span>
+<h2 class="font-display-lg text-display-lg-mobile md:text-headline-xl mb-12 italic text-brand-black leading-tight">
+                        "Gravity didn't just teach me formulas; they taught me how to think under pressure. The simulated tests were harder than the actual JEE, which made the final exam feel like just another day at the center."
+                    </h2>
+<div class="flex flex-col items-center">
+<div class="w-16 h-16 rounded-full overflow-hidden mb-4 ring-2 ring-brand-lime">
+<img class="w-full h-full object-cover" data-alt="Headshot of a young male student with a bright, hopeful expression. The image is a studio portrait with clean lighting and a neutral background, highlighting his clean-cut and professional appearance as a successful alumni of the coaching program." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCosA0QkgjlUSZnjSpQ-ktVmF6ZXAXe5Xwlg028oXOAA5B7K5Utw9_URI_9g1emX-VAWxBfco0oynrTsSaEQnVS1u-QTBP106aFtN0iSY80t4bfFIgVQZUTm-A0YARW0FUMiTOZr3LnjP1wyYpBDVE7yR80lyF-3XyYjjOjK5wwbTr0OCJu6Q1MK-0jC1Ro2b2OmTRTBQmORxgXWRuwDFZRBEm7GGLXA6qhxdMAj0azvsAgJXXoibuH3prsUW1cBdOP9kXeg3qCfaK-"/>
+</div>
+<p class="font-bold text-brand-black">Vikram Malhotra</p>
+<p class="text-label-sm text-on-surface-variant">AIR 42, JEE Advanced 2023 | Currently at IIT Bombay</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="py-[120px] text-center">
+<div class="max-w-3xl mx-auto px-margin-desktop">
+<h2 class="font-display-lg text-display-lg-mobile md:text-[48px] mb-8 text-brand-black">Your Seat at the Top Awaits.</h2>
+<p class="text-body-lg text-on-surface-variant mb-12">Admissions open for 2024-25 batches. Limited seats for our intensive scholarship program.</p>
+<div class="flex flex-col md:flex-row justify-center gap-6">
+<button class="bg-brand-black text-white px-12 py-5 rounded-[12px] font-bold text-label-md hover:scale-105 transition-transform">Book a Free Demo Class</button>
+<button class="bg-brand-lime text-brand-black px-12 py-5 rounded-[12px] font-bold text-label-md hover:scale-105 transition-transform">Take Scholarship Test</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container dark:bg-inverse-surface w-full py-section-gap">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop max-w-container-max mx-auto">
+<div>
+<div class="font-headline-lg text-headline-lg font-bold text-on-surface dark:text-inverse-on-surface mb-6">Gravity Classes</div>
+<p class="text-on-surface-variant dark:text-on-surface-variant font-body-md text-body-md">
+                    Empowering the next generation of engineers and doctors with premium academic coaching.
+                </p>
+</div>
+<div>
+<h5 class="font-bold text-on-surface dark:text-inverse-on-surface mb-4">Quick Links</h5>
+<ul class="space-y-3 font-body-md text-body-md">
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">IIT-JEE Coaching</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">NEET Prep</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Foundation Courses</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-bold text-on-surface dark:text-inverse-on-surface mb-4">Support</h5>
+<ul class="space-y-3 font-body-md text-body-md">
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Scholarship Tests</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Success Stories</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Contact</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-bold text-on-surface dark:text-inverse-on-surface mb-4">Legal</h5>
+<ul class="space-y-3 font-body-md text-body-md">
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Terms of Service</a></li>
+</ul>
+<div class="mt-8 pt-8 border-t border-outline-variant">
+<p class="text-on-surface-variant text-label-sm">© 2024 Gravity Classes. All rights reserved.</p>
+</div>
+</div>
+</div>
+</footer>
+</body></html>
