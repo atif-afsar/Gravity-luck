@@ -4,6 +4,7 @@ import Navbar from './Components/Common/Navbar'
 import Footer from './Components/Common/Footer'
 import ScrollToTop from './Components/Common/ScrollToTop'
 import Loader from './Components/Common/Loader'
+import FloatingButtons from './Components/Common/FloatingButtons'
 import Home from './Pages/Home'
 import IitJee from './Pages/Iit-Jee'
 import Courses from './Pages/Courses.jsx'
@@ -28,6 +29,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
         </Routes>
         <Footer />
+        <FloatingButtons />
       </Router>
     </>
   )
