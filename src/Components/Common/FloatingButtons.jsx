@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 
-const PHONE = '919876543210'
+const PHONE = '918400002983'
 const WHATSAPP_MSG = encodeURIComponent('Hi, I would like to know more about Gravity Classes.')
 
 export default function FloatingButtons() {

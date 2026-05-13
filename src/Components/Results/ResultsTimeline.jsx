@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 
 const milestones = [
-  { year: "2010", title: "The Beginning", description: "Gravity Classes founded in Hazratganj, Lucknow with a single classroom and 30 students. The vision: world-class competitive exam coaching in Lucknow.", icon: "flag" },
+  { year: "2012", title: "The Beginning", description: "Gravity Classes founded in Lucknow with a vision of providing world-class IIT-JEE and NEET coaching. Started with a single classroom and dedicated faculty from top institutions.", icon: "flag" },
   { year: "2013", title: "First IIT Selection", description: "3 students clear JEE Advanced in our first graduating batch. The foundation of trust is laid.", icon: "military_tech" },
   { year: "2016", title: "NEET Track Launched", description: "Dedicated NEET coaching division established with specialized Biology faculty from AIIMS. 45 medical selections in the first year.", icon: "biotech" },
   { year: "2018", title: "100+ IIT Selections", description: "Crossed the landmark of 100+ IIT selections in a single session. Gomti Nagar center inaugurated to meet growing demand.", icon: "celebration" },

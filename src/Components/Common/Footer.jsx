@@ -46,10 +46,10 @@ export default function Footer() {
           {/* Brand column */}
           <motion.div variants={itemVariants} className="col-span-2 sm:col-span-2 lg:col-span-4">
             <div className="inline-block bg-white rounded-xl p-1.5 mb-5">
-              <img src={logo} alt="Gravity Classes" className="h-9 sm:h-10 w-auto" />
+              <img src={logo} alt="Gravity Classes Lucknow - IIT JEE NEET Coaching Institute" className="h-9 sm:h-10 w-auto" />
             </div>
             <p className="text-white/50 text-[13px] sm:text-[14px] leading-relaxed mb-6 max-w-xs">
-              Empowering students through rigorous training and personalized mentorship in Lucknow since 2010.
+              Lucknow&apos;s #1 IIT-JEE &amp; NEET coaching institute since 2012. 771/814 cracked JEE Main 2026 — best result in India.
             </p>
             <div className="flex gap-3">
               {['social_leaderboard', 'share', 'mail'].map((icon) => (
@@ -97,11 +97,11 @@ export default function Footer() {
             <div className="space-y-4">
               <div className="flex items-start gap-3">
                 <span className="material-symbols-outlined text-[#AAC840] text-[18px] mt-0.5 shrink-0">location_on</span>
-                <p className="text-white/50 text-[13px] sm:text-[14px]">Hazratganj Center, Lucknow, Uttar Pradesh 226001</p>
+                <p className="text-white/50 text-[13px] sm:text-[14px]">9A, Shahnajaf Road, opp. Saint Francis College, Hazratganj, Lucknow 226001</p>
               </div>
               <div className="flex items-center gap-3">
                 <span className="material-symbols-outlined text-[#AAC840] text-[18px] shrink-0">call</span>
-                <p className="text-white/50 text-[13px] sm:text-[14px]">+91 98765 43210</p>
+                <a href="tel:+918400002983" className="text-white/50 hover:text-[#AAC840] transition-colors text-[13px] sm:text-[14px]">+91 84000 02983</a>
               </div>
               <div className="flex items-center gap-3">
                 <span className="material-symbols-outlined text-[#AAC840] text-[18px] shrink-0">mail</span>

@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 const headingWords = "Get in Touch with Gravity.".split(" ");
 
 const quickInfo = [
-  { icon: "call", label: "Call Us", value: "+91 98765 43210", href: "tel:+919876543210" },
+  { icon: "call", label: "Call Us", value: "+91 84000 02983", href: "tel:+918400002983" },
   { icon: "mail", label: "Email", value: "info@gravityclasses.com", href: "mailto:info@gravityclasses.com" },
   { icon: "schedule", label: "Office Hours", value: "Mon – Sat, 8 AM – 8 PM", href: null },
 ];

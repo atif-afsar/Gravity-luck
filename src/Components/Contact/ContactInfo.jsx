@@ -1,9 +1,12 @@
 import { motion } from "framer-motion";
 
 const centers = [
-  { name: "Hazratganj Center (Main)", address: "City Heart Building, MG Road, Hazratganj, Lucknow 226001", phone: "+91 98765 43210", email: "hazratganj@gravityclasses.com", programs: "All Programs", active: true },
-  { name: "Gomti Nagar Center", address: "Patrakarpuram Crossing, Vibhuti Khand, Gomti Nagar, Lucknow 226010", phone: "+91 98765 43211", email: "gomtinagar@gravityclasses.com", programs: "JEE & NEET Integrated", active: false },
-  { name: "Aliganj Center", address: "Sector H, Near Patel Chowk, Aliganj, Lucknow 226024", phone: "+91 98765 43212", email: "aliganj@gravityclasses.com", programs: "Foundation & Pre-Foundation", active: false },
+  { name: "Hazratganj Center", address: "9A, Shahnajaf Road, opp. Saint Francis College, Hazratganj, Lucknow 226001", phone: "+91 84000 02983", email: "info@gravityclasses.com", programs: "All Programs", active: true },
+  { name: "Indira Nagar (Head Office)", address: "D-3221, near Munshipulia, Indira Nagar, Lucknow 226016", phone: "+91 84000 02983", email: "info@gravityclasses.com", programs: "All Programs", active: false },
+  { name: "Gomti Nagar Center", address: "CP/72, opp. Sahara Hospital Building, Viraj Khand-4, Gomti Nagar, Lucknow 226010", phone: "+91 84000 02983", email: "info@gravityclasses.com", programs: "JEE & NEET Integrated", active: false },
+  { name: "Aliganj Center", address: "B1/8, 3rd Floor, Ved Plaza, Kapoorthala, Aliganj, Lucknow 226024", phone: "+91 84000 02983", email: "info@gravityclasses.com", programs: "Foundation & JEE/NEET", active: false },
+  { name: "Alambagh Center", address: "Shri Pratap Mall, Alambagh, Lucknow", phone: "+91 84000 02983", email: "info@gravityclasses.com", programs: "Foundation Courses", active: false },
+  { name: "Ansal Center", address: "Ansal, Lucknow", phone: "+91 84000 02983", email: "info@gravityclasses.com", programs: "JEE & NEET", active: false },
 ];
 
 const cardVariants = {
@@ -24,11 +27,11 @@ export default function ContactInfo() {
         >
           <h2 className="text-[28px] sm:text-[32px] md:text-[40px] font-bold text-[#1c1b1b] mb-3 sm:mb-4">Visit Our Centers</h2>
           <p className="text-[#444748] text-[14px] sm:text-[16px] md:text-[18px] max-w-2xl mx-auto">
-            Three premium learning centers across Lucknow — walk in anytime during office hours for a campus tour and counseling.
+            Six centers across Lucknow — walk in anytime during office hours for a campus tour and counseling.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-[24px]">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-[24px]">
           {centers.map((center, i) => (
             <motion.div
               key={center.name}

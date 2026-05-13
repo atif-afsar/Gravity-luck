@@ -77,11 +77,7 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
             className="text-[14px] sm:text-[16px] md:text-[18px] text-[#444748] mb-8 sm:mb-10 max-w-2xl leading-[1.6]"
           >
-            Gravity Classes offers an elite academic environment for both
-            IIT-JEE and NEET aspirants. From advanced Physics &amp; Maths for 
-            engineering to comprehensive Biology &amp; Chemistry for medical 
-            entrance — our methodology combines analytical precision with 
-            psychological momentum to crack India&apos;s toughest exams.
+            Gravity Classes offers elite IIT-JEE (Main &amp; Advanced) and NEET-UG coaching in Lucknow since 2012. With our School Integrated Programs (SIP), 771 out of 814 students cracked JEE Main 2026 — the best result in India. Our methodology combines analytical precision with psychological momentum to crack India&apos;s toughest exams.
           </motion.p>
 
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
@@ -115,7 +111,8 @@ export default function Hero() {
           >
             <img
               src={HERO_IMG}
-              alt="Gravity Classes IIT-JEE & NEET coaching"
+              alt="IIT-JEE and NEET coaching at Gravity Classes Lucknow - Best coaching institute"
+              loading="lazy"
               className="w-full h-full object-cover"
             />
           </motion.div>

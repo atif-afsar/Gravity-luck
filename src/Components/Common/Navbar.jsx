@@ -35,7 +35,7 @@ function Navbar() {
         <div className="mx-auto flex items-center justify-between h-20 px-5 md:px-10" style={{ maxWidth: 1280 }}>
           <Link to="/" className="select-none">
             <div className="bg-white rounded-xl p-1.5 shadow-sm">
-              <img src={logo} alt="Gravity Classes" className="h-11 w-auto" />
+              <img src={logo} alt="Gravity Classes Lucknow - Best IIT JEE NEET Coaching" className="h-11 w-auto" />
             </div>
           </Link>
 
@@ -117,7 +117,7 @@ function Navbar() {
             <div className="flex items-center justify-between h-20 px-6 border-b border-[#c4c7c8]/20 shrink-0">
               <Link to="/" onClick={() => setMobileOpen(false)}>
                 <div className="bg-[#AAC840]/10 rounded-xl p-1.5">
-                  <img src={logo} alt="Gravity Classes" className="h-10 w-auto" />
+                  <img src={logo} alt="Gravity Classes Lucknow - Best IIT JEE NEET Coaching" className="h-10 w-auto" />
                 </div>
               </Link>
               <button
@@ -184,7 +184,7 @@ function Navbar() {
                 </Link>
                 <div className="flex items-center justify-center gap-2 mt-4 text-[12px] text-[#444748]">
                   <span className="material-symbols-outlined text-[14px] text-[#AAC840]">call</span>
-                  +91 98765 43210
+                  +91 84000 02983
                 </div>
               </motion.div>
             </div>

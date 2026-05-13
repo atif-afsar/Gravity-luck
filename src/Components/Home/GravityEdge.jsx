@@ -21,8 +21,7 @@ function GravityEdge() {
         >
           <h2 className="text-[28px] sm:text-[32px] md:text-[40px] font-bold mb-3 md:mb-4">The Gravity Edge</h2>
           <p className="text-[#444748] text-[15px] md:text-[18px] max-w-2xl mb-10 md:mb-16">
-            Why thousands of aspirants in Lucknow trust us for their competitive
-            exam journey year after year.
+            Why thousands of IIT-JEE and NEET aspirants in Lucknow trust Gravity Classes for their competitive exam preparation since 2012.
           </p>
         </motion.div>
 
@@ -50,7 +49,8 @@ function GravityEdge() {
             </p>
             <img
               src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXX7YZQZ6PlxxhXJpk_lUiDazlH1bWYUruOqfhodHyYWS_7EJab1iiT-r4sP75beBIgZ3Z0KVhy6qEKiuK_f_OE6HxaMee3c649yBYRAVxwaQhno03aQ2dm2IIn_x8GteEoCNzbuUZ-aW9i2s_3OCc6WanVkcCvA8vuzNAH-uhsQOXflKPpMTLRA7HL7Yj_f85Rmqdvilf_oWZqhl8qAO4LlGgCgJs3QlM8BpT5DO9z-vP1o0Urlc9j7rGr6upgv8WS4I_SWE2C2eV"
-              alt="Faculty mentorship"
+              alt="Expert IIT-JEE and NEET faculty mentorship at Gravity Classes Lucknow"
+              loading="lazy"
               className="absolute bottom-0 right-0 w-2/3 h-2/3 object-cover rounded-tl-[3rem] opacity-40 group-hover:scale-105 transition-transform duration-700 hidden sm:block"
             />
           </motion.div>

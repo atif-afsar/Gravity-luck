@@ -5,15 +5,15 @@ import { Link } from "react-router-dom";
 const IMAGES = [
   {
     src: "https://lh3.googleusercontent.com/aida-public/AB6AXuADO7o_wx7cbcK8TUli5xaqzHsP9H84C-JgZ4oUnYs-NW6FMYxU7Zy1ODCcw2cu3EXbm0eNqOAeQE3y4W8fsorv6ySIoyehlh2mJ0dt7P1feIRptV9lTHYdaPVtc8haKFkDpa6ItMfDAUL35lrddS_cXl0Pp_-jmJUXFTLwgtiD_vesM8jxZVtVK_e2tH00F2EUXpvjbEepDPcgI2L37SBPEez92wTm5B9iSCtABKXrdfB4f4bxqefnOLp9B2Nu31I2TXci1dxnR5W5",
-    alt: "Students celebrating IIT-JEE results",
+    alt: "Gravity Classes students celebrating IIT-JEE results in Lucknow",
   },
   {
     src: "https://lh3.googleusercontent.com/aida-public/AB6AXuCCYiZihAXyepb04-GRr8Lp9Z_bXNP3P9FoS0m7_0sYUOK806PCmTGPvYavaG3aBU35jBIlRti87VUTgGhALb4Lnmw_vrNjoBBIEPCJK1mjwowkC6vTfZY9_E1US2dbbAJExlawgr7RlNEqRi8xbzaE07tClodQemaY0KcP4YLoQ6MSDE2eRo9xwBuxC5uYDXijt7Khb0kmHk-BdnbrXOes0RLkRD44Br0umVgGnweyFoAIMbIdOyDCas1WiSELbtZ3VUPL5hEUhQjb",
-    alt: "Classroom session at Gravity Classes",
+    alt: "IIT-JEE and NEET coaching classroom session at Gravity Classes Lucknow",
   },
   {
     src: "https://images.unsplash.com/photo-1523050854058-8df90110c8f1?w=600&h=400&fit=crop",
-    alt: "Students in laboratory session",
+    alt: "Science laboratory session at Gravity Classes coaching institute Lucknow",
   },
 ];
 
@@ -72,7 +72,7 @@ export default function Hero() {
             star
           </span>
           <span className="text-[#3a5a00] font-semibold text-[12px] sm:text-[13px] tracking-wide">
-            Admissions Open for 2026-27
+            Best Coaching Institute in Lucknow | Since 2012
           </span>
         </motion.div>
 
@@ -178,6 +178,7 @@ export default function Hero() {
                   <img
                     src={img.src}
                     alt={img.alt}
+                    loading="lazy"
                     className="w-full h-[100px] sm:h-[160px] md:h-[240px] object-cover hover:scale-105 transition-transform duration-500"
                   />
                 </motion.div>
