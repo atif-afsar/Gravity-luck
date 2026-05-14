@@ -83,6 +83,28 @@ body {
   box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.04);
 }
 
+/* GPU-friendly infinite marquee — pairs with duplicated content at 50% width */
+@keyframes results-marquee {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.results-marquee-track {
+  animation: results-marquee var(--marquee-duration, 48s) linear infinite;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .results-marquee-track {
+    animation: none;
+    transform: none;
+  }
+}
+
 .material-symbols-outlined {
   font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
 }

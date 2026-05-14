@@ -1,36 +1,13 @@
-import { useRef } from "react";
 import { motion } from "framer-motion";
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
 
-const HERO_IMG =
-  "https://lh3.googleusercontent.com/aida-public/AB6AXuAy5wnqjEYeEXHUIDUhZ1hQsHAzrW088EyCL5mXYsufzNBKk_CqwlRM_kTQeyguEGuMg2GH23xmugUJoo1ClgzbSeGWj5usdOCJ0uvryHFimJsIbEYuRLySqnUBxv_kqIayP2J64dsdI5KdduTIU9X7CujW1oewZIfJDl1WRgkK1JhAJUwTLlwwC8v2NfP66M1T95L3tFtQ11LRm0cvMxZuLMSb40K28xn1qG_9RNb6pY__i84xaq6y0xFbWKZ6Kw151kPhnK7QmNXl";
+const HERO_IMG = `/Images/${encodeURIComponent("Untitled design (13).png")}`;
 
 const headingWords = "Mastering the Science of Success.".split(" ");
 
 export default function Hero() {
-  const imgRef = useRef(null);
-  const containerRef = useRef(null);
-
-  useGSAP(
-    () => {
-      gsap.to(imgRef.current, {
-        y: -12,
-        duration: 3,
-        ease: "sine.inOut",
-        yoyo: true,
-        repeat: -1,
-      });
-    },
-    { scope: containerRef }
-  );
-
   return (
     <section className="overflow-hidden">
-      <div
-        ref={containerRef}
-        className="max-w-[1280px] mx-auto px-5 md:px-10 py-10 md:py-[60px] grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-[24px] items-center"
-      >
+      <div className="max-w-[1280px] mx-auto px-5 md:px-10 py-10 md:py-[60px] grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-[28px] items-center">
         {/* LEFT SIDE */}
         <div className="lg:col-span-7 flex flex-col">
           <div className="flex flex-wrap gap-2 sm:gap-3 mb-5 sm:mb-6">
@@ -100,20 +77,33 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* RIGHT SIDE */}
-        <div className="lg:col-span-5">
+        {/* RIGHT — logo (Framer only; no GSAP on same transform) */}
+        <div className="lg:col-span-5 w-full flex justify-center lg:justify-end">
           <motion.div
-            ref={imgRef}
-            initial={{ x: 60, opacity: 0, scale: 0.95 }}
-            animate={{ x: 0, opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-            className="h-[280px] sm:h-[380px] md:h-[450px] lg:h-[500px] rounded-[20px] sm:rounded-[24px] overflow-hidden"
+            initial={{ opacity: 0, x: 32 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.65, delay: 0.25, ease: [0.25, 0.46, 0.45, 0.94] }}
+            className="
+              w-full max-w-[min(100%,280px)] sm:max-w-[320px] md:max-w-[360px] lg:max-w-[400px] xl:max-w-[420px]
+              aspect-square
+              shrink-0
+              rounded-[20px] sm:rounded-[24px]
+              bg-white border border-[#e8e8e8]
+              shadow-[0_12px_40px_rgba(0,0,0,0.06)]
+              flex items-center justify-center
+              p-6 sm:p-8 md:p-10
+            "
           >
             <img
               src={HERO_IMG}
-              alt="IIT-JEE and NEET coaching at Gravity Classes Lucknow - Best coaching institute"
+              alt="Gravity Classes — Orienting Intelligence. IIT-JEE and NEET coaching institute logo, Lucknow"
+              width={640}
+              height={640}
               loading="lazy"
-              className="w-full h-full object-cover"
+              decoding="async"
+              draggable={false}
+              sizes="(max-width:640px) 72vw,(max-width:1024px) 38vw, 420px"
+              className="w-full h-full object-contain object-center select-none"
             />
           </motion.div>
         </div>

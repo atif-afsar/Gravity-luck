@@ -7,19 +7,14 @@ export default defineConfig({
   build: {
     rollupOptions: {
       output: {
-        manualChunks: {
-          vendor: ['react', 'react-dom', 'react-router-dom'],
-          animations: ['framer-motion', 'gsap'],
+        manualChunks(id) {
+          if (!id.includes('node_modules')) return
+          if (/node_modules\/(react-dom|react-router-dom)(\/|$)/.test(id)) return 'vendor'
+          if (/node_modules\/react(\/|$)/.test(id)) return 'vendor'
+          if (/node_modules\/(framer-motion|gsap)(\/|$)/.test(id)) return 'animations'
         },
       },
     },
     cssMinify: true,
-    minify: 'terser',
-    terserOptions: {
-      compress: {
-        drop_console: true,
-        drop_debugger: true,
-      },
-    },
   },
 })
