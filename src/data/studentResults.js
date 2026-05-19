@@ -3,7 +3,7 @@
  * Paths must match files on disk (no spaces — use subfolders iit/ / neet/).
  */
 
-/** @typedef {'jee' | 'neet'} ExamTrack */
+/** @typedef {'jee' | 'neet' | 'foundation'} ExamTrack */
 
 /**
  * @typedef {Object} StudentAchievement
@@ -47,6 +47,18 @@ export const studentAchievements = [
     imageAlt: "Ojas Singhal, JEE Main percentile 99.973, Gravity Classes Lucknow",
     topRanker: true,
     cardBadge: "JEE Main",
+  },
+  {
+    id: "samara-firdaus",
+    name: "Samara Firdaus",
+    exam: "11th Entrance",
+    examTrack: "foundation",
+    headline: "1st Rank",
+    subline: "11th Entrance",
+    image: "/Images/9.jpg",
+    imageAlt: "Samara Firdaus, 1st rank in 11th entrance, Gravity Classes Lucknow",
+    topRanker: true,
+    cardBadge: "11th Entrance",
   },
   {
     id: "aditya-panday",
@@ -250,6 +262,12 @@ export const neetAchievers = studentAchievements.filter((s) => s.examTrack === "
 export const jeeMainShowcaseStudent = studentAchievements.find((s) => s.id === "ojas-singhal");
 export const neetShowcaseStudent = studentAchievements.find((s) => s.id === "panshul");
 export const jeeAdvancedSpotlightStudent = studentAchievements.find((s) => s.id === "ojas-singhal");
+
+/** Home “Toppers” strip — fixed creatives, stable order */
+const HOME_TOPPER_IMAGES = ["/Results/iit/11.jpg", "/Images/9.jpg", "/Results/neet/17.jpg"];
+export const homeSpotlightToppers = HOME_TOPPER_IMAGES.map((image) =>
+  studentAchievements.find((s) => s.image === image)
+).filter(Boolean);
 
 export function getStudentResultsPayload() {
   return {
